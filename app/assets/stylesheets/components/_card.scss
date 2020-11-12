@@ -1,0 +1,22 @@
+nav .home_header {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: center;
+  ;
+}  
+
+h1 {
+  color: white;
+}
+.card {
+  background: white;
+  margin-bottom: 10px;
+}
+.card-header {
+  height: 150px;
+  background-size: cover;
+}
+.card-body {
+  padding: 30px;
+  color: white;
+}

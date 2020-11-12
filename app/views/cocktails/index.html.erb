@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="home_header">
+    <h1 class="text-center">Suck My Cocktails</h1>
+  </div>
+  
+  <p class="text-center">Cocktails to make myself feel better about my coding skills</p>
+</nav>
+
+<div class="text-center padded">
+  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <%= link_to cocktail_path(cocktail) do %>
+          <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');">
+          <div class="card-body">
+            <%= cocktail.name %>
+          </div>  
+        </div>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

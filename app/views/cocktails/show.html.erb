@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-  <%= link_to "Back to all cocktails", root_path %>
+  
 
   <%# <%= cl_image_tag @cocktail.photo.key, crop: :thumb %> %>
 <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
@@ -31,6 +31,7 @@
           <% end %>
           <p><%= link_to "Add new dose", new_cocktail_dose_path(@cocktail) %></p>
           <p><%= link_to 'Leave a review', new_cocktail_review_path(@cocktail) %></p>
+          <p><%= link_to "Back to all cocktails", root_path %></p>
         </tbody>
       </table>
     </div>

@@ -2,6 +2,8 @@
   <h1><%= @cocktail.name %></h1>
   <%= link_to "Back to all cocktails", root_path %>
 
+  <%# <%= cl_image_tag @cocktail.photo.key, crop: :thumb %> %>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <h3>Recipe</h3>
@@ -20,9 +22,15 @@
                   <i class="fa fa-trash destroy_dose"></i>
                 <% end %>
               </td>
+                <ul class="list-group">
+                  <% @cocktail.reviews.each do |review| %>
+                    <li class="list-group-item"><%= review.content %></li>
+                  <% end %>
+                </ul>
             </tr>
           <% end %>
-          <%= link_to "Add new dose", new_cocktail_dose_path(@cocktail) %>
+          <p><%= link_to "Add new dose", new_cocktail_dose_path(@cocktail) %></p>
+          <p><%= link_to 'Leave a review', new_cocktail_review_path(@cocktail) %></p>
         </tbody>
       </table>
     </div>
